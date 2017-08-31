@@ -1,6 +1,9 @@
 
 # Created by https://www.gitignore.io/api/node
 
+# Build client and server
+server/public
+
 ### Node ###
 # Logs
 logs
