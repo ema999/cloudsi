@@ -25,10 +25,3 @@
 html, body, #root, .App{
   height: 100%;
 }
-
-/* MainContent */
-
-.MainContent{
-  padding-left: 256px;
-  height: 100%;
-}
