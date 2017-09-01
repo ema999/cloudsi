@@ -25,6 +25,14 @@
     <noscript>
       You need to enable JavaScript to run this app.
     </noscript>
+
+    <script>
+
+    let jsonFromJade = "#{inicialState}".replace(/&quot;/g, '"');
+    const inicialState = JSON.parse(jsonFromJade);
+
+    </script>
+
     <div id="root"></div>
     <!--
       This HTML file is a template.
