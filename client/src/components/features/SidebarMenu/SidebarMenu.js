@@ -4,6 +4,7 @@ import './SidebarMenu.css';
 import Drawer from 'material-ui/Drawer';
 import Menu from 'material-ui/Menu';
 import MenuItem from 'material-ui/MenuItem';
+import { Link } from 'react-router-dom'
 
 // Icons
 import PersonAdd from 'material-ui/svg-icons/social/person-add';
@@ -17,9 +18,9 @@ class SidebarMenu extends Component {
     return (
       <div className="SidebarMenu">
         <Drawer containerStyle={{padding:'0px'}} open={true}>
-          <img src={logo} className="App-logo" alt="logo" />
+          <Link to="/"><img src={logo} className="App-logo" alt="logo" /></Link>
           <Menu style={{maxWidth:'256px', textAlign: 'left'}}>
-            <MenuItem primaryText="Share" leftIcon={<PersonAdd />} />
+            <Link to="/partners"><MenuItem primaryText="Socios" leftIcon={<PersonAdd />} /></Link>
             <MenuItem primaryText="Get links" leftIcon={<ContentLink />} />
             <MenuItem primaryText="Make a copy" leftIcon={<ContentCopy />} />
             <MenuItem primaryText="Download" leftIcon={<Download />} />

@@ -1,12 +1,18 @@
 import React, { Component } from 'react';
 import './MainContent.css';
-import logo from '../../../logo.png';
+import { Switch, Route } from 'react-router-dom'
+import DashboardContent from '../DashboardContent/DashboardContent';
+import PartnersContent from '../PartnersContent/PartnersContent';
 
 class MainContent extends Component {
   render() {
     return (
       <div className="MainContent">
-        <img src={logo} className="App-logo" alt="logo" />
+        <Switch>
+          <Route exact path='/' component={DashboardContent}/>
+          <Route exact path='/partners' component={PartnersContent}/>
+          <Route path='/partners/:number' component={PartnersContent}/>
+        </Switch>
       </div>
     );
   }
