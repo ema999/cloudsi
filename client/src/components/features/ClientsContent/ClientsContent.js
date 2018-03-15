@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
-import './PartnersContent.css';
+import './ClientsContent.css';
 import TodoListContainer from '../../containers/todoListContainer'
 
-class PartnersContent extends Component {
+class ClientsContent extends Component {
   render() {
     return (
-      <div className="PartnersContent">
+      <div className="ClientsContent">
         <TodoListContainer />
       </div>
     );
   }
 }
 
-export default PartnersContent;
+export default ClientsContent;

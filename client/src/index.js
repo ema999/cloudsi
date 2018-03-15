@@ -13,9 +13,12 @@ let initialState = {
     {id: 1, text: 'una todo', completed: false},
     {id: 2, text: 'otra todo', completed: false}
   ],
-  users: [
-    {name: 'emanuel'}
-  ]
+  users: {
+    list: [
+      {name: 'emanuel'}
+    ],
+    isFetching: false
+  }
 }
 
 let store = createStore(todoApp, initialState)

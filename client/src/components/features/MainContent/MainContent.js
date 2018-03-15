@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './MainContent.css';
 import { Switch, Route } from 'react-router-dom'
 import DashboardContent from '../DashboardContent/DashboardContent';
-import PartnersContent from '../PartnersContent/PartnersContent';
+import ClientsContent from '../ClientsContent/ClientsContent';
 
 class MainContent extends Component {
   render() {
@@ -10,8 +10,8 @@ class MainContent extends Component {
       <div className="MainContent">
         <Switch>
           <Route exact path='/' component={DashboardContent}/>
-          <Route exact path='/partners' component={PartnersContent}/>
-          <Route path='/partners/:number' component={PartnersContent}/>
+          <Route exact path='/clients' component={ClientsContent}/>
+          <Route path='/clients/:number' component={ClientsContent}/>
         </Switch>
       </div>
     );

@@ -5,6 +5,11 @@ const users = (state = [], action) => {
         ...state,
         {name: action.name}
       ]
+    case 'FETCH_USERS_REQUEST':
+      return [
+        ...state,
+        {isFetching: true}
+      ]
     default:
       return state
   }

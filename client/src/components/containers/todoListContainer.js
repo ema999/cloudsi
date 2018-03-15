@@ -1,17 +1,7 @@
 import { connect } from 'react-redux'
 import { toggleTodo } from '../../actions'
+import { fetchUsers } from '../../actions'
 import TodoList from '../features/TodoList/TodoList'
-
-/*const getVisibleTodos = (todos, filter) => {
-  switch (filter) {
-    case 'SHOW_ALL':
-      return todos
-    case 'SHOW_COMPLETED':
-      return todos.filter(t => t.completed)
-    case 'SHOW_ACTIVE':
-      return todos.filter(t => !t.completed)
-  }
-}*/
 
 const mapStateToProps = (state) => {
   return {
@@ -23,6 +13,18 @@ const mapDispatchToProps = (dispatch) => {
   return {
     onTodoClick: (id) => {
       dispatch(toggleTodo(id))
+    },
+    fetchUsers: () => {
+
+      /*fetch('flores.jpg')
+        .then(function(response) {
+          return response.blob();
+        })
+        .then(function(myBlob) {
+          var objectURL = URL.createObjectURL(myBlob);
+          miImagen.src = objectURL;
+        });
+      dispatch(fetchUsers())*/
     }
   }
 }

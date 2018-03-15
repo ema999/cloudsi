@@ -1,3 +1,5 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name="theme-color" content="#000000"><link rel="manifest" href="/manifest.json"><link rel="shortcut icon" href="/favicon.ico"><title>React App</title><link href="/static/css/main.ef21b2b7.css" rel="stylesheet"></head><body><noscript>You need to enable JavaScript to run this app.</noscript><script>let jsonFromJade = "#{inicialState}".replace(/&quot;/g, '"');
-    console.log(jsonFromJade);
-    const inicialState = JSON.parse(jsonFromJade);</script><div id="root"></div><script type="text/javascript" src="/static/js/main.a204e253.js"></script></body></html>
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name="theme-color" content="#000000"><link rel="manifest" href="/manifest.json"><link rel="shortcut icon" href="/favicon.ico"><title>React App</title><link href="/static/css/main.1faccd89.css" rel="stylesheet"></head><body><noscript>You need to enable JavaScript to run this app.</noscript><script>let jsonFromJade = "#{inicialState}".replace(/&quot;/g, '"');
+    if (jsonFromJade != '#{inicialState}') {
+      const inicialState = JSON.parse(jsonFromJade);
+      window.inicialState = inicialState;
+    }</script><div id="root"></div><script type="text/javascript" src="/static/js/main.d817c305.js"></script></body></html>

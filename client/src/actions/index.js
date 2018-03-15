@@ -21,3 +21,9 @@ export const toggleTodo = (id) => {
     id
   }
 }
+
+export const fetchUsers = () => {
+  return {
+    type: 'FETCH_USERS_REQUEST'
+  }
+}

@@ -7,7 +7,7 @@ import MenuItem from 'material-ui/MenuItem';
 import { Link } from 'react-router-dom'
 
 // Icons
-import PersonAdd from 'material-ui/svg-icons/social/person-add';
+import Person from 'material-ui/svg-icons/social/person';
 import ContentCopy from 'material-ui/svg-icons/content/content-copy';
 import Download from 'material-ui/svg-icons/file/file-download';
 import Delete from 'material-ui/svg-icons/action/delete';
@@ -20,7 +20,9 @@ class SidebarMenu extends Component {
         <Drawer containerStyle={{padding:'0px'}} open={true}>
           <Link to="/"><img src={logo} className="App-logo" alt="logo" /></Link>
           <Menu style={{maxWidth:'256px', textAlign: 'left'}}>
-            <Link to="/partners"><MenuItem primaryText="Socios" leftIcon={<PersonAdd />} /></Link>
+            <Link to="/clients">
+              <MenuItem primaryText="Clientes" leftIcon={<Person />} />
+            </Link>
             <MenuItem primaryText="Get links" leftIcon={<ContentLink />} />
             <MenuItem primaryText="Make a copy" leftIcon={<ContentCopy />} />
             <MenuItem primaryText="Download" leftIcon={<Download />} />
