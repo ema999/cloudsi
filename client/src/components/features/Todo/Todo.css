@@ -1,0 +1,9 @@
+.Todo{
+  background: gray;
+  color: white;
+  padding: 10px;
+  margin: 10px;
+}
+.Todo:hover{
+  cursor: pointer;
+}

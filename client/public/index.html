@@ -29,8 +29,10 @@
     <script>
 
     let jsonFromJade = "#{inicialState}".replace(/&quot;/g, '"');
-    const inicialState = JSON.parse(jsonFromJade);
-    window.inicialState = inicialState;
+    if (jsonFromJade != '#{inicialState}') {
+      const inicialState = JSON.parse(jsonFromJade);
+      window.inicialState = inicialState;
+    }
     </script>
 
     <div id="root"></div>
