@@ -1,6 +1,7 @@
 import { connect } from 'react-redux'
 import { toggleTodo } from '../../actions'
 import { fetchUsers } from '../../actions'
+import AuthService from '../../services/AuthService'
 import TodoList from '../features/TodoList/TodoList'
 
 const mapStateToProps = (state) => {
@@ -16,15 +17,11 @@ const mapDispatchToProps = (dispatch) => {
     },
     fetchUsers: () => {
 
-      /*fetch('flores.jpg')
-        .then(function(response) {
-          return response.blob();
-        })
-        .then(function(myBlob) {
-          var objectURL = URL.createObjectURL(myBlob);
-          miImagen.src = objectURL;
-        });
-      dispatch(fetchUsers())*/
+      AuthService.login({user:'user',pass:'password'}).then((response) => {
+        console.log(response);
+      })
+
+      dispatch(fetchUsers())
     }
   }
 }
