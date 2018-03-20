@@ -27,3 +27,23 @@ export const fetchUsers = () => {
     type: 'FETCH_USERS_REQUEST'
   }
 }
+
+export const changeLoginFormInputs = (input) => {
+  return {
+    type: 'CHANGE_LOGIN_FORM_INPUTS',
+    input
+  }
+}
+
+export const submitLoginForm = () => {
+  return {
+    type: 'SUBMIT_LOGIN_FORM'
+  }
+}
+
+export const submitLoginFormFailed = (errorMsg) => {
+  return {
+    type: 'SUBMIT_LOGIN_FORM_FAILED',
+    errorMsg
+  }
+}

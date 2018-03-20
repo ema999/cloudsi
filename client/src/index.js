@@ -18,6 +18,12 @@ let initialState = {
       {name: 'emanuel'}
     ],
     isFetching: false
+  },
+  account: {
+    loginForm: {
+      email: undefined,
+      password: undefined
+    }
   }
 }
 

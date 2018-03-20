@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import './App.css';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import Dashboard from './components/screens/Dashboard.js';
+import Index from './components/screens/index';
 
 class App extends Component {
   render() {
     return (
       <MuiThemeProvider>
         <div className="App">
-          <Dashboard />
+          <Index />
         </div>
       </MuiThemeProvider>
     );

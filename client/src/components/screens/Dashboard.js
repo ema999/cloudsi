@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
-import SidebarMenu from './../features/SidebarMenu/SidebarMenu.js';
-import MainContent from './../features/MainContent/MainContent.js';
+import SidebarMenu from './../features/SidebarMenu/SidebarMenu';
+import DashboardContent from './../features/DashboardContent/DashboardContent';
 
 class Dashboard extends Component {
   render() {
     return (
       <div className="Dashboard">
         <SidebarMenu />
-        <MainContent />
+        <DashboardContent />
       </div>
     );
   }

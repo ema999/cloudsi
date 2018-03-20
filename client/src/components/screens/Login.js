@@ -1,15 +1,14 @@
 import React, { Component } from 'react';
-import SidebarMenu from './../features/SidebarMenu/SidebarMenu.js';
-import MainContent from './../features/MainContent/MainContent.js';
+import LoginContent from './../features/LoginContent/LoginContent.js';
 
-class Dashboard extends Component {
+class Login extends Component {
   render() {
     return (
-      <div className="Dashboard">
-        <MainContent />
+      <div className="Login">
+        <LoginContent />
       </div>
     );
   }
 }
 
-export default Dashboard;
+export default Login;
