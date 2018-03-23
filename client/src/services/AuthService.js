@@ -44,8 +44,8 @@ class AuthService {
   }
 
   static isLogged() {
-
-    if( !localStorage.account ||  !localStorage.account.token) return false
+    let account = JSON.parse(localStorage.getItem('account'));
+    if( !account || !account.token) return false
 
     return true
   }

@@ -66,6 +66,7 @@ var AuthService = function(){
       if (jwt.decode(token, this.secret)) return callback(null, true);
     }
     catch(err) {
+      console.error(err);
       return callback(new customError('invalidToken'));
     }
   }
@@ -76,6 +77,7 @@ var AuthService = function(){
       if (payload) return callback(null, payload);
     }
     catch(err) {
+      console.error(err);
       return callback(new customError('invalidToken'));
     }
   }

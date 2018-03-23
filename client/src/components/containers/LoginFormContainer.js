@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import { submitLoginForm, changeLoginFormInputs, submitLoginFormFailed } from '../../actions'
+import { submitLoginForm, changeLoginFormInputs, submitLoginFormFailed, submitLoginFormSuccess } from '../../actions'
 import AuthService from '../../services/AuthService'
 import LoginForm from '../features/LoginForm/LoginForm'
 
@@ -7,7 +7,9 @@ const mapStateToProps = (state) => {
   return {
     email: state.account.loginForm.email,
     password: state.account.loginForm.password,
-    isFetching: state.account.loginForm.isFetching
+    isFetching: state.account.loginForm.isFetching,
+    errorMsg: state.account.loginForm.errorMsg,
+    isLogged: state.account.isLogged
   }
 }
 
@@ -17,7 +19,12 @@ const mapDispatchToProps = (dispatch) => {
 
       dispatch(submitLoginForm())
       AuthService.login({email: credentials.email, password: credentials.password}).then((response) => {
-        if (response.errors) return dispatch(submitLoginFormFailed(response.message))
+
+        if (!response.token) return dispatch(submitLoginFormFailed('Email o contraseña incorrecta'));
+
+        localStorage.setItem('account', JSON.stringify({token: response.token}));
+
+        dispatch(submitLoginFormSuccess())
       }, (err) => {
         dispatch(submitLoginFormFailed('Email o contraseña incorrecta'))
       })

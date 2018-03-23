@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import logo from '../../../logo.png';
 import './SidebarMenu.css';
 import Drawer from 'material-ui/Drawer';
 import Menu from 'material-ui/Menu';
 import MenuItem from 'material-ui/MenuItem';
+import Logo from '../Logo/Logo';
 import { Link } from 'react-router-dom'
 
 // Icons
@@ -18,7 +18,7 @@ class SidebarMenu extends Component {
     return (
       <div className="SidebarMenu">
         <Drawer containerStyle={{padding:'0px'}} open={true}>
-          <Link to="/"><img src={logo} className="App-logo" alt="logo" /></Link>
+          <Logo />
           <Menu style={{maxWidth:'256px', textAlign: 'left'}}>
             <Link to="/clients">
               <MenuItem primaryText="Clientes" leftIcon={<Person />} />

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import SidebarMenu from './../features/SidebarMenu/SidebarMenu';
+import MainContent from './../features/MainContent/MainContent';
 import ClientsContent from './../features/ClientsContent/ClientsContent';
 
 class Clients extends Component {
@@ -7,7 +8,9 @@ class Clients extends Component {
     return (
       <div className="Clients">
         <SidebarMenu />
-        <ClientsContent />
+        <MainContent>
+          <ClientsContent />
+        </MainContent>
       </div>
     );
   }

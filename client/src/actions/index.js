@@ -47,3 +47,9 @@ export const submitLoginFormFailed = (errorMsg) => {
     errorMsg
   }
 }
+
+export const submitLoginFormSuccess = () => {
+  return {
+    type: 'SUBMIT_LOGIN_FORM_SUCCESS'
+  }
+}

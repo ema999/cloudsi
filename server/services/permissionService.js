@@ -9,9 +9,9 @@ var PermissionService = function(){
     var authService = new AuthService();
 
     authService.decodeToken(token, function(err, data){
-      if(err) callback(err);
+      if(err) return callback(err);
 
-      if(!permissions[data.payload.role][action]) return callback(new customError('forbidden'));
+      if(!permissions[data.payload.role] || !permissions[data.payload.role][action]) return callback(new customError('forbidden'));
 
       callback(null, true);
     });

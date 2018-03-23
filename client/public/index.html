@@ -19,7 +19,7 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>React App</title>
+    <title>Cloudsi</title>
   </head>
   <body>
     <noscript>
@@ -28,10 +28,10 @@
 
     <script>
 
-    let jsonFromJade = "#{inicialState}".replace(/&quot;/g, '"');
-    if (jsonFromJade != '#{inicialState}') {
-      const inicialState = JSON.parse(jsonFromJade);
-      window.inicialState = inicialState;
+    let jsonFromJade = "#{initialState}".replace(/&quot;/g, '"');
+    if (jsonFromJade != '#{initialState}') {
+      const initialState = JSON.parse(jsonFromJade);
+      window.initialState = initialState;
     }
     </script>
 

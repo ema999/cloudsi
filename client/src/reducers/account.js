@@ -20,6 +20,17 @@ const account = (state = [], action) => {
           password: undefined
         }
       }
+    case 'SUBMIT_LOGIN_FORM_SUCCESS':
+      return {
+        ...state,
+        loginForm: {...state.loginForm,
+          isFetching: false,
+          errorMsg: undefined,
+          email: undefined,
+          password: undefined
+        },
+        isLogged : true
+      }
     default:
       return state
   }
