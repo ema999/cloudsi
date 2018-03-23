@@ -6,34 +6,29 @@ import { BrowserRouter } from 'react-router-dom'
 import { Provider } from 'react-redux'
 import { createStore } from 'redux'
 import todoApp from './reducers'
+import AuthService  from './services/AuthService'
 //import registerServiceWorker from './registerServiceWorker';
 
-let initialState = {
-  todos: [
-    {id: 1, text: 'una todo', completed: false},
-    {id: 2, text: 'otra todo', completed: false}
-  ],
-  users: {
-    list: [
-      {name: 'emanuel'}
-    ],
-    isFetching: false
-  },
-  account: {
-    loginForm: {
-      email: undefined,
-      password: undefined
-    }
-  }
+if( AuthService.isLogged() ) {
+  AuthService.getInitialState().then((response) => {
+    let initialState = response;
+    __INIT(initialState);
+  })
+}else{
+  let initialState = {}
+  __INIT(initialState);
 }
 
-let store = createStore(todoApp, initialState)
 
-ReactDOM.render((
-  <Provider store={store}>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
-  </Provider>
-), document.getElementById('root'));
-//registerServiceWorker();
+function __INIT(initialState) {
+  let store = createStore(todoApp, initialState)
+
+  ReactDOM.render((
+    <Provider store={store}>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </Provider>
+  ), document.getElementById('root'));
+  //registerServiceWorker();
+}

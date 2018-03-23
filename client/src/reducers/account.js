@@ -29,7 +29,8 @@ const account = (state = [], action) => {
           email: undefined,
           password: undefined
         },
-        isLogged : true
+        isLogged : true,
+        metadata : {...state.metadata, ...action.account}
       }
     default:
       return state

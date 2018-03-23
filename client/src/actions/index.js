@@ -48,8 +48,9 @@ export const submitLoginFormFailed = (errorMsg) => {
   }
 }
 
-export const submitLoginFormSuccess = () => {
+export const submitLoginFormSuccess = (account) => {
   return {
-    type: 'SUBMIT_LOGIN_FORM_SUCCESS'
+    type: 'SUBMIT_LOGIN_FORM_SUCCESS',
+    account
   }
 }

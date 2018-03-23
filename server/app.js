@@ -13,6 +13,7 @@ var CustomError = require('./class/customError');
 // Routers
 var index = require('./routes/index');
 var apiUserRouter = require('./api/entities/users/routes/userRouter');
+var apiInitialRouter = require('./api/entities/initial/routes/initialRouter');
 
 // Enviroment
 var enviroment = process.env.ENVIROMENT || 'development';
@@ -36,6 +37,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
 app.use('/api/user', apiUserRouter);
+app.use('/api/initialstate', apiInitialRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

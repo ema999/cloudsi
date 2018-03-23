@@ -24,7 +24,10 @@ const mapDispatchToProps = (dispatch) => {
 
         localStorage.setItem('account', JSON.stringify({token: response.token}));
 
-        dispatch(submitLoginFormSuccess())
+        AuthService.currentAccount().then((account) => {
+          dispatch(submitLoginFormSuccess(account))
+        })
+
       }, (err) => {
         dispatch(submitLoginFormFailed('Email o contraseña incorrecta'))
       })

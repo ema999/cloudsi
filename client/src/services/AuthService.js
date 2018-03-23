@@ -3,7 +3,8 @@
 class AuthService {
 
   static requestHeaders() {
-    return {'AUTHORIZATION': `Bearer ${localStorage.account.token}`}
+    let account = JSON.parse(localStorage.account);
+    return {'AUTHORIZATION': `Bearer ${account.token}`}
   }
 
   static login(credentials) {
@@ -20,36 +21,54 @@ class AuthService {
     return fetch(request).then(response => {
       return response.json();
     }).catch(function(error) {
-        console.log('There has been a problem with your fetch operation: ' + error.message);
+        console.log('There has been a problem with your login fetch operation: ' + error.message);
     });
 
   }
 
-  USANDO_HEADER(credentials) {
+  static logout() {
+    localStorage.removeItem('account');
+  }
+
+  static currentAccount() {
     const headers = this.requestHeaders();
 
-    const request = new Request(process.env.REACT_APP_API_URL + 'login', {
-      method: 'POST',
-      headers: headers,
-      body: JSON.stringify({auth: credentials})
+    const request = new Request(process.env.REACT_APP_API_URL + 'api/user/current', {
+      method: 'GET',
+      headers: headers
+      //body: JSON.stringify({auth: credentials})
     })
 
     return fetch(request).then(response => {
-      if (!response.ok) console.log('Network response was not ok.');
       return response.json();
     }).catch(function(error) {
-        console.log('There has been a problem with your fetch operation: ' + error.message);
+        console.log('There has been a problem with currentAccount fetch operation: ' + error.message);
     });
 
   }
 
   static isLogged() {
+    // REVISAR QUE NO ESTE VENCIDO
     let account = JSON.parse(localStorage.getItem('account'));
     if( !account || !account.token) return false
 
     return true
   }
 
+  static getInitialState() {
+    const headers = this.requestHeaders();
+
+    const request = new Request(process.env.REACT_APP_API_URL + 'api/initialstate', {
+      method: 'GET',
+      headers: headers
+    })
+
+    return fetch(request).then(response => {
+      return response.json();
+    }).catch(function(error) {
+        console.log('There has been a problem with Initil state fetch operation: ' + error.message);
+    });
+  }
 
 }
 
