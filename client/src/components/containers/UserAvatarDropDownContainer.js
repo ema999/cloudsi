@@ -1,5 +1,6 @@
 import { connect } from 'react-redux'
 import UserAvatarDropDown from '../features/UserAvatarDropDown/UserAvatarDropDown'
+import { logOut } from '../../actions'
 import AuthService from '../../services/AuthService'
 
 const mapStateToProps = (state) => {
@@ -12,7 +13,7 @@ const mapDispatchToProps = (dispatch) => {
   return {
     onClickLogOut: () => {
       AuthService.logout();
-      dispatch()
+      dispatch(logOut());
     }
   }
 }

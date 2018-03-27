@@ -3,11 +3,13 @@ import './UserAvatarDropDown.css';
 import Avatar from 'material-ui/Avatar';
 import IconMenu from 'material-ui/IconMenu';
 import MenuItem from 'material-ui/MenuItem';
+import { Redirect } from 'react-router-dom'
 
 const style = {margin: 5};
 
 class UserAvatarDropDown extends Component {
   render() {
+    if (!this.props.user) return (<Redirect to="/" push />);
     return (
       <div className="UserAvatarDropDown">
         <IconMenu
@@ -28,7 +30,7 @@ class UserAvatarDropDown extends Component {
         targetOrigin={{horizontal: 'left', vertical: 'top'}}
         menuStyle={{minWidth: '100px',textAlign:'center'}}
         >
-        <MenuItem primaryText="Salir" />
+        <MenuItem primaryText="Salir" onClick={this.props.onClickLogOut}/>
         </IconMenu>
       </div>
 

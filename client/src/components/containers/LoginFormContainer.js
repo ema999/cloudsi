@@ -4,12 +4,14 @@ import AuthService from '../../services/AuthService'
 import LoginForm from '../features/LoginForm/LoginForm'
 
 const mapStateToProps = (state) => {
+  let account = state.account ||  {}
+  let loginForm = state.account.loginForm ?  state.account.loginForm : {}
   return {
-    email: state.account.loginForm.email,
-    password: state.account.loginForm.password,
-    isFetching: state.account.loginForm.isFetching,
-    errorMsg: state.account.loginForm.errorMsg,
-    isLogged: state.account.isLogged
+    email: loginForm.email,
+    password: loginForm.password,
+    isFetching: loginForm.isFetching,
+    errorMsg: loginForm.errorMsg,
+    isLogged: account.isLogged
   }
 }
 

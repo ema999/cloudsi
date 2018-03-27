@@ -1,4 +1,4 @@
-
+import jwt_decode from 'jwt-decode'
 
 class AuthService {
 
@@ -48,10 +48,9 @@ class AuthService {
   }
 
   static isLogged() {
-    // REVISAR QUE NO ESTE VENCIDO
     let account = JSON.parse(localStorage.getItem('account'));
     if( !account || !account.token) return false
-
+    if( new Date().getTime()/1000 > jwt_decode(account.token).exp ) return false
     return true
   }
 

@@ -32,6 +32,12 @@ const account = (state = [], action) => {
         isLogged : true,
         metadata : {...state.metadata, ...action.account}
       }
+    case 'LOG_OUT':
+      return {
+        ...state,
+        isLogged : false,
+        metadata : undefined
+      }
     default:
       return state
   }

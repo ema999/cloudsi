@@ -54,3 +54,9 @@ export const submitLoginFormSuccess = (account) => {
     account
   }
 }
+
+export const logOut = () => {
+  return {
+    type: 'LOG_OUT'
+  }
+}
