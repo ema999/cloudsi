@@ -5,6 +5,7 @@ import ClientsContent from '../features/ClientsContent/ClientsContent';
 import Login from './Login';
 import Dashboard from './Dashboard';
 import Clients from './Clients';
+import Users from './Users';
 
 class Index extends Component {
 
@@ -25,6 +26,7 @@ class Index extends Component {
           <Route exact path='/' render={(props) => (this.requireAuth(props) || <Dashboard/>)}/>
           <Route exact path='/clients' render={(props) => (this.requireAuth(props) || <Clients/>)}/>
           <Route path='/clients/:number' component={ClientsContent}/>
+          <Route exact path='/users' render={(props) => (this.requireAuth(props) || <Users/>)}/>
           <Route exact path='/login' component={Login}/>
         </Switch>
       </div>
